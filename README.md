@@ -57,3 +57,11 @@ SEO Best Practices: Applied search engine optimization techniques, including sem
 HTML Form Development: Created structured, accessible web forms using standard HTML tags and attributes.
 Form Validation with JavaScript: Built client-side JavaScript validation logic to handle form submissions, verify user inputs, and provide real-time feedback
 Website Deployment: Deployed the live site using a free cloud hosting platform (such as GitHub Pages or Netlify) to make it publicly accessible online.
+
+Reference List: W3Schools:
+
+W3Schools. (2026) JavaScript Form Validation. Available at: https://www.w3schools.com/js/js_validation.asp [Accessed 2 November 2026].
+GitHub Repository / Gist:
+Doe, J. (2025) Responsive CSS navigation bar layout. Available at: https://github.com/user/repository [Accessed 2 November 2026].
+Mozilla Developer Network. (2026) SEO fundamentals for web developers. Available at: https://developer.mozilla.org/en-US/docs/Glossary/SEO [Accessed 2 November 2026].
+Rosebank College. (2026) Mobile Application Development and Web Design Study Manual. Johannesburg: IIE Rosebank College.
