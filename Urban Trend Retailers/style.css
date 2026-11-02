@@ -1,0 +1,521 @@
+/* ==========================================================================
+   1. MODERN CSS RESET & NORMALIZE
+   Neutralizes default browser styles across all browsers.
+   ========================================================================== */
+
+/* 1. Use a more intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Remove default margins and paddings */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 4. Remove built-in form typography styles & outline resets */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* 5. Remove list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 6. Remove default link styling */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 7. Core body defaults */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-offwhite);
+    color: var(--color-charcoal);
+    font-family: var(--font-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   2. BRAND DESIGN SYSTEM & CSS VARIABLES
+   Derived from Section 5 (Design & UX Considerations)
+   ========================================================================== */
+:root {
+    /* Brand Colors */
+    --color-charcoal: #1A1A1A;
+    --color-emerald: #2E7D32;
+    --color-emerald-hover: #1b5e20;
+    --color-offwhite: #F9F9FB;
+    --color-white: #FFFFFF;
+    --color-border: #E5E7EB;
+    --color-gray-text: #6B7280;
+
+    /* Typography */
+    --font-primary: 'Aptos', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   3. GLOBAL REUSABLE UTILITIES
+   ========================================================================== */
+/* Brand Utility Classes */
+.bg-charcoal { background-color: var(--color-charcoal) !important; }
+.bg-emerald { background-color: var(--color-emerald) !important; }
+.bg-offwhite { background-color: var(--color-offwhite) !important; }
+
+.text-charcoal { color: var(--color-charcoal) !important; }
+.text-emerald { color: var(--color-emerald) !important; }
+.text-offwhite { color: var(--color-offwhite) !important; }
+
+/* Interactive Primary Button Styling */
+.btn-primary {
+    background-color: var(--color-emerald);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-emerald-hover);
+}
+
+.btn-secondary {
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-emerald);
+}
+
+/* Base Form Control Resets for Uniform Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    border: 1px solid var(--color-border);
+    background-color: #F3F4F6;
+    border-radius: 0.375rem;
+    padding: 0.625rem 0.875rem;
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-emerald);
+    background-color: var(--color-white);
+}
+
+/* ==========================================================================
+   URBAN TREND RETAILERS - GLOBAL STYLESHEET
+   Brand Palette: Deep Charcoal (#1A1A1A), Emerald Green (#2E7D32), Warm Off-white (#F9F9FB)
+   ========================================================================== */
+
+:root {
+  --primary-charcoal: #1A1A1A;
+  --accent-emerald: #2E7D32;
+  --accent-emerald-hover: #1b5e20;
+  --bg-offwhite: #F9F9FB;
+  --card-bg: #FFFFFF;
+  --text-dark: #1A1A1A;
+  --text-muted: #666666;
+  --border-color: #E2E8F0;
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Aptos', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-offwhite);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- NAVIGATION --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.brand-logo span {
+  color: var(--accent-emerald);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #E2E8F0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-emerald);
+}
+
+/* --- CONTAINER & SECTIONS --- */
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-charcoal);
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* --- HERO SECTION & TRANSITIONS (index.html) --- */
+.hero {
+  background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)), url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-emerald);
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-emerald-hover);
+  transform: translateY(-2px);
+}
+
+/* --- ACCORDION COMPONENT (about.html) --- */
+.accordion {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.accordion-item {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-charcoal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease;
+  padding: 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.accordion-item.active .accordion-content {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* --- MAP CONTAINER (about.html) --- */
+#store-map {
+  height: 380px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* --- GALLERY & LIGHTBOX (products.html) --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.product-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent-emerald);
+  font-weight: 700;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* --- FORMS (enquiry.html & contact.html) --- */
+.form-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-emerald);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: var(--primary-charcoal);
+  color: #A0AEC0;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+/* ==========================================================================
+   RESEARCH & JUSTIFICATION: CSS3 Transitions & Animations
+   - Selected Technology: Hardware-Accelerated CSS3 Transitions 
+     (transition: transform 0.3s ease, background-color 0.3s ease)
+   - Technical Justification: Avoids costly browser layout reflows by using 
+     GPU-accelerated properties like transform and opacity.
+   - UX Impact: Provides smooth visual feedback for interactive buttons and 
+     product card hover states, aligning with the clean minimalist aesthetic.
+   ========================================================================== */
+
+   /* ==========================================================================
+   STEP 2.1 - ANIMATIONS, TRANSITIONS & LIGHTBOX STYLING
+   ========================================================================== */
+
+/* 2.1 CSS Animations & Transitions */
+.btn-primary, .product-card, .accordion-header {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+/* 2.1 Lightbox Modal Overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  max-width: 85%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}

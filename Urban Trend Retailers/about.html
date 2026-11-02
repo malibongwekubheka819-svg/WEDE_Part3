@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document setup: HTML5, language, and viewport settings for mobile responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Browser tab title for the About page -->
+    <title>About Us | Urban Trend Retailers</title>
+
+    <!-- STEP 2.2: Local SEO & Geo-Targeting Metadata -->
+    <meta name="description" content="Urban Trend Retailers - Sustainable streetwear flagship store located in Braamfontein, Johannesburg. Shop eco-friendly fashion locally.">
+    <meta name="geo.region" content="ZA-GP">
+    <meta name="geo.placename" content="Johannesburg, Braamfontein">
+    <meta name="geo.position" content="-26.1929;28.0305">
+    <meta name="ICBM" content="-26.1929, 28.0305">
+
+    <!-- Tailwind CSS is loaded so the page can use site-wide styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Custom site colors and accordion styling -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { charcoal: '#1A1A1A', emerald: '#2E7D32', offwhite: '#F9F9FB' },
+                    fontFamily: { sans: ['Aptos', 'Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        #store-map {
+            height: 350px;
+            border-radius: 0.75rem;
+            width: 100%;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-offwhite text-charcoal font-sans flex flex-col min-h-screen">
+
+    <!-- Header and navigation for consistent site-wide browsing -->
+    <header class="sticky top-0 z-50 bg-offwhite border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-charcoal">Urban Trend<span class="text-emerald">.</span></a>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="index.html" class="hover:text-emerald transition">Home</a>
+                <a href="product.html" class="hover:text-emerald transition">Shop Products</a>
+                <a href="about.html" class="text-emerald font-semibold">About Us</a>
+                <a href="enquiry.html" class="hover:text-emerald transition">Enquiries</a>
+                <a href="contact.html" class="hover:text-emerald transition">Contact & Stores</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area for the about-page story and brand values -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-12 w-full">
+        <!-- Intro heading for the page and brand positioning -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-extrabold text-charcoal mb-2">Our Journey & Philosophy</h1>
+            <p class="text-emerald font-semibold text-sm uppercase tracking-wide">Pioneering Sustainable Streetwear in South Africa</p>
+        </div>
+
+        <!-- Hero banner image used to set the visual tone -->
+        <div class="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-12 shadow-md">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80" alt="Sustainable Apparel Banner" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-charcoal/40 flex items-center justify-center">
+                <span class="text-white text-sm md:text-base font-bold tracking-wider bg-charcoal/80 px-6 py-2 rounded-full backdrop-blur-sm border border-white/20">
+                    Sustainable Fashion • Est. 2018
+                </span>
+            </div>
+        </div>
+
+        <!-- Brief history section -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200 mb-12 overflow-hidden">
+            <div class="grid md:grid-cols-2">
+                <div class="p-8 flex flex-col justify-center">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-gray-100 pb-2">Brief History</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Urban Trend Retailers was launched in 2018 as a single specialty store in Johannesburg. It specializes in sustainable streetwear, footwear, and accessories.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Driven by passion for fashion and environmental awareness, Urban Trend Retailers has since grown into a well-known specialty retailer with five retail stores nationwide across South Africa.
+                    </p>
+                </div>
+                <div class="h-64 md:h-auto min-h-[280px]">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Johannesburg Retail Store" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 1.1 INTERACTIVE ACCORDIONS -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200 mb-12 p-8">
+            <h2 class="text-2xl font-bold mb-6 text-charcoal border-b border-gray-100 pb-2">Brand Insights & Accordions</h2>
+            <div class="accordion space-y-4">
+                <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-50 text-left font-semibold text-charcoal hover:bg-gray-100 transition">
+                        <span>Our History (Established 2018)</span>
+                        <span class="accordion-icon text-emerald">▼</span>
+                    </button>
+                    <div class="accordion-content bg-white px-4">
+                        <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                            Launched in 2018 as a single boutique store in Johannesburg, Urban Trend Retailers has expanded to 5 nationwide locations dedicated to sustainable street fashion.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-50 text-left font-semibold text-charcoal hover:bg-gray-100 transition">
+                        <span>Our Eco-Friendly Mission</span>
+                        <span class="accordion-icon text-emerald">▼</span>
+                    </button>
+                    <div class="accordion-content bg-white px-4">
+                        <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                            We craft high-quality apparel while systematically lowering the ecological footprint of urban fashion commerce across Southern Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 1.1 INTERACTIVE MAP (Leaflet.js API) -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 mb-12">
+            <h2 class="text-2xl font-bold mb-2 text-charcoal">Find Our Flagship Store</h2>
+            <p class="text-sm text-gray-600 mb-4">Braamfontein, Johannesburg Flagship Location</p>
+            <div id="store-map"></div>
+        </section>
+
+        <!-- Audience banner -->
+        <section class="relative rounded-2xl overflow-hidden shadow-md text-white p-8 md:p-12 text-center">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80" alt="Eco-Conscious Streetwear Models" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-emerald/90 mix-blend-multiply"></div>
+            <div class="relative z-10">
+                <h3 class="text-2xl font-bold mb-2">Designed For Eco-Conscious Youth</h3>
+                <p class="text-green-100 max-w-2xl mx-auto text-sm leading-relaxed">
+                    Tailored specifically for eco-conscious millennials and Gen Z’ers who shop primarily online and use mobile devices for commerce, research, and social media.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer copyright -->
+    <footer class="bg-charcoal text-white py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
+            &copy; 2026 The Independent Institute of Education (Pty) Ltd. Urban Trend Retailers | www.urbantrendretail.co.za
+        </div>
+    </footer>
+
+    <!-- Leaflet Map JS Library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Accordion Toggle Script
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('.accordion-icon');
+
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = "rotate(180deg)";
+                } else {
+                    content.style.maxHeight = "0";
+                    icon.style.transform = "rotate(0deg)";
+                }
+            });
+        });
+
+        // Leaflet Location Map Setup (Braamfontein, Johannesburg)
+        const map = L.map('store-map').setView([-26.1929, 28.0305], 14);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        L.marker([-26.1929, 28.0305]).addTo(map)
+            .bindPopup('<b>Urban Trend Retailers</b><br>Braamfontein Flagship Store')
+            .openPopup();
+    </script>
+</body>
+</html>

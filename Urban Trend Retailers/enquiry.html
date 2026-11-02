@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document setup: HTML5, language, and mobile viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser tab title for the inquiry page -->
+    <title>Customer Enquiry | Urban Trend Retailers</title>
+    <!-- Tailwind CSS for the site's layout and styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Brand colors and fonts used across the site -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { charcoal: '#1A1A1A', emerald: '#2E7D32', offwhite: '#F9F9FB' },
+                    fontFamily: { sans: ['Aptos', 'Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-offwhite text-charcoal font-sans flex flex-col min-h-screen">
+
+    <!-- Header with the brand and top navigation -->
+    <header class="sticky top-0 z-50 bg-offwhite border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Brand link that goes back to the home page -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-charcoal">Urban Trend<span class="text-emerald">.</span></a>
+            <!-- Navigation menu for the website -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="index.html" class="hover:text-emerald transition">Home</a>
+                <a href="product.html" class="hover:text-emerald transition">Shop Products</a>
+                <a href="about.html" class="hover:text-emerald transition">About Us</a>
+                <a href="enquiry.html" class="text-emerald font-semibold">Enquiries</a>
+                <a href="contact.html" class="hover:text-emerald transition">Contact & Stores</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content grid for the enquiry form and support message -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 md:py-12 w-full">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+            
+            <!-- Visual sidebar with store image and support message -->
+            <div class="lg:col-span-5 relative min-h-[260px] lg:min-h-full flex flex-col justify-between p-6 lg:p-8 text-white">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Urban Trend Customer Support" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <span class="bg-emerald text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Customer Care</span>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                    <h2 class="text-2xl font-bold mb-2">We’re Here to Help</h2>
+                    <p class="text-gray-200 text-xs leading-relaxed">
+                        Whether you need assistance with Click & Collect, product sustainability details, or order tracking, our Johannesburg team is at your service.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form column where customers submit questions or support requests -->
+            <div class="lg:col-span-7 p-6 sm:p-8 md:p-10">
+                <h1 class="text-2xl font-bold text-charcoal mb-2">Submit an Enquiry</h1>
+                <p class="text-sm text-gray-600 mb-6">Have questions regarding product sustainability, online orders, or Click & Collect reserves? Fill out the form below.</p>
+
+                <form action="#" method="POST" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">First Name *</label>
+                            <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Last Name *</label>
+                            <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Email Address *</label>
+                            <input type="email" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Mobile Phone *</label>
+                            <input type="tel" placeholder="e.g. +27 82 123 4567" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Enquiry Category *</label>
+                        <select required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald transition">
+                            <option value="">Select Category...</option>
+                            <option value="click-collect">Click & Collect Order Status</option>
+                            <option value="product-info">Product & Sustainable Materials</option>
+                            <option value="online-order">Online Purchase & Shipping</option>
+                            <option value="general">General Support</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Your Message *</label>
+                        <textarea rows="4" required placeholder="How can we assist you today?" class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald transition"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald hover:bg-green-800 text-white font-bold py-3 rounded-lg transition duration-200">Send Enquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer with copyright and branded domain -->
+    <footer class="bg-charcoal text-white py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
+            &copy; 2026 Urban Trend Retailers | www.urbantrendretail.co.za
+        </div>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Enquiry | Urban Trend Retailers</title>
+  <link rel="stylesheet" href="css.style">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">Urban Trend<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html" class="active">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-card">
+      <h1 class="page-title">Product & Sponsorship Enquiry</h1>
+      <p class="page-subtitle">Submit details regarding bulk orders, pricing, or volunteer partnerships.</p>
+      
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="enquiry-type">Enquiry Type</label>
+          <select id="enquiry-type" class="form-control" required>
+            <option value="">Select Option</option>
+            <option value="product">Product Pricing & Stock</option>
+            <option value="volunteer">Volunteer / Eco Program</option>
+            <option value="sponsorship">Sponsorship Opportunity</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%;">Submit Enquiry</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 The Independent Institute of Education (Pty) Ltd. Urban Trend Retailers.</p>
+  </footer>
+</body>
+</html>
+/* ==========================================================================
+   RESEARCH & JUSTIFICATION: Image Gallery & Lightbox Overlay
+   - Selected Technology: Custom CSS Fixed Modal Overlay with JavaScript Events
+   - Technical Justification: Built with native event listeners rather than 
+     bloated plugins to ensure fast execution and minimal bundle size.
+   - UX Impact: Enables shoppers to inspect apparel details in high resolution 
+     without navigating away or losing their current scroll position.
+   ========================================================================== */
+   <script>
+    document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop form from reloading page
+
+        // Grab form fields
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const type = document.getElementById('enquiryType').value;
+        const message = document.getElementById('message').value.trim();
+
+        // Grab error elements
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const typeError = document.getElementById('typeError');
+        const messageError = document.getElementById('messageError');
+
+        // Response box elements
+        const responseBox = document.getElementById('responseBox');
+        const responseTitle = document.getElementById('responseTitle');
+        const responseText = document.getElementById('responseText');
+
+        let isValid = true;
+
+        // 1. Validate Name
+        if (name === "") {
+            nameError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            nameError.classList.add('hidden');
+        }
+
+        // 2. Validate Email (basic check for @ and .)
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            emailError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            emailError.classList.add('hidden');
+        }
+
+        // 3. Validate Type
+        if (type === "") {
+            typeError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            typeError.classList.add('hidden');
+        }
+
+        // 4. Validate Message
+        if (message === "") {
+            messageError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            messageError.classList.add('hidden');
+        }
+
+        // If validation passes, generate dynamic response based on selection
+        if (isValid) {
+            responseBox.classList.remove('hidden');
+            responseTitle.textContent = "Thank you, " + name + "!";
+
+            if (type === "product") {
+                responseText.textContent = "Regarding your product inquiry: Our Braamfontein flagship store currently holds stock for this item. Standard pricing applies, and local delivery within Johannesburg takes 2–3 business days.";
+            } else if (type === "wholesale") {
+                responseText.textContent = "Regarding your wholesale request: Bulk orders qualify for a tiered discount structure starting from 15 units. Our commercial sales team will email a formal quote to " + email + ".";
+            } else if (type === "sponsor") {
+                responseText.textContent = "Regarding your sponsorship/collaboration inquiry: We review creator and event proposals every Monday. Our marketing division will review your details and reach out via " + email + ".";
+            }
+        } else {
+            responseBox.classList.add('hidden');
+        }
+    });
+</script>

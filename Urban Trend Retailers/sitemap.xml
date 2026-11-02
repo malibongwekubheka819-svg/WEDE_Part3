@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://urbantrendretailers.co.za/index.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://urbantrendretailers.co.za/products.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- About Us & Flagship Store Page -->
+  <url>
+    <loc>https://urbantrendretailers.co.za/about.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Enquiry Page -->
+  <url>
+    <loc>https://urbantrendretailers.co.za/enquiry.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Contact Us Page -->
+  <url>
+    <loc>https://urbantrendretailers.co.za/contact.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document setup: HTML5, language, and mobile responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser tab title for the contact page -->
+    <title>Contact & Stores | Urban Trend Retailers</title>
+    <!-- Tailwind CSS loads the utility classes used across the site -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom theme colors and fonts for the brand styling -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { charcoal: '#1A1A1A', emerald: '#2E7D32', offwhite: '#F9F9FB' },
+                    fontFamily: { sans: ['Aptos', 'Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-offwhite text-charcoal font-sans flex flex-col min-h-screen">
+
+    <!-- Top header with store branding and site navigation -->
+    <header class="sticky top-0 z-50 bg-offwhite border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Brand link returning user to the homepage -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-charcoal">Urban Trend<span class="text-emerald">.</span></a>
+            <!-- Main site navigation menu -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="index.html" class="hover:text-emerald transition">Home</a>
+                <a href="product.html" class="hover:text-emerald transition">Shop Products</a>
+                <a href="about.html" class="hover:text-emerald transition">About Us</a>
+                <a href="enquiry.html" class="hover:text-emerald transition">Enquiries</a>
+                <a href="contact.html" class="text-emerald font-semibold">Contact & Stores</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area for the contact and store information section -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-12 w-full">
+        <!-- Page heading and introduction -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-charcoal mb-2">Visit Our Stores</h1>
+            <p class="text-emerald font-semibold text-sm uppercase tracking-wide">Your local sustainable fashion support team</p>
+        </div>
+
+        <!-- Store locator section: list of retail locations with addresses and hours -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <h2 class="text-xl font-bold mb-3">Johannesburg Flagship</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">123 Bree Street, CBD, Johannesburg</p>
+                <p class="text-gray-600 text-sm leading-relaxed mt-2">Mon-Sat: 9:00 - 18:00</p>
+                <p class="text-gray-600 text-sm leading-relaxed">Sun: 10:00 - 15:00</p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <h2 class="text-xl font-bold mb-3">Cape Town Store</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">45 Long Street, CBD, Cape Town</p>
+                <p class="text-gray-600 text-sm leading-relaxed mt-2">Mon-Sat: 10:00 - 17:00</p>
+                <p class="text-gray-600 text-sm leading-relaxed">Sun: Closed</p>
+            </div>
+        </section>
+
+        <!-- Contact form area for customer questions and support requests -->
+        <section class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold mb-4">Send Us a Message</h2>
+            <form class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Name</label>
+                        <input type="text" class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Email</label>
+                        <input type="email" class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Message</label>
+                    <textarea rows="5" class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-sm focus:outline-none focus:border-emerald"></textarea>
+                </div>
+                <button type="submit" class="bg-emerald hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg transition">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer with copyright and website domain -->
+    <footer class="bg-charcoal text-white py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
+            &copy; 2026 Urban Trend Retailers | www.urbantrendretail.co.za
+        </div>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Urban Trend Retailers</title>
+  <link rel="stylesheet" href="css.style">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">Urban Trend<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-card">
+      <h1 class="page-title">Get In Touch</h1>
+      <p class="page-subtitle">Send a direct message to our Johannesburg customer service care team.</p>
+      
+      <form action="mailto:support@urbantrendretail.co.za" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="contact-name">Your Name</label>
+          <input type="text" id="contact-name" name="Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Your Email</label>
+          <input type="email" id="contact-email" name="Email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" rows="5" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 The Independent Institute of Education (Pty) Ltd. Urban Trend Retailers.</p>
+  </footer>
+</body>
+</html>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop form from reloading page
+
+        // Grab form fields
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
+        // Grab error elements
+        const nameError = document.getElementById('contactNameError');
+        const emailError = document.getElementById('contactEmailError');
+        const subjectError = document.getElementById('subjectError');
+        const messageError = document.getElementById('contactMessageError');
+
+        // Response box elements
+        const responseBox = document.getElementById('contactResponseBox');
+        const responseText = document.getElementById('contactResponseText');
+
+        let isValid = true;
+
+        // 1. Validate Name
+        if (name === "") {
+            nameError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            nameError.classList.add('hidden');
+        }
+
+        // 2. Validate Email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            emailError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            emailError.classList.add('hidden');
+        }
+
+        // 3. Validate Subject
+        if (subject === "") {
+            subjectError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            subjectError.classList.add('hidden');
+        }
+
+        // 4. Validate Message
+        if (message === "") {
+            messageError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            messageError.classList.add('hidden');
+        }
+
+        // If validation passes, show success message
+        if (isValid) {
+            responseBox.classList.remove('hidden');
+            responseText.textContent = "Thank you, " + name + "! Your message regarding '" + subject + "' has been sent successfully. We will respond within 24 hours.";
+            document.getElementById('contactForm').reset();
+        } else {
+            responseBox.classList.add('hidden');
+        }
+    });
+</script>
