@@ -93,6 +93,11 @@
 
                 <div id="results-count" class="text-sm text-gray-500 mb-4"></div>
                 <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+                <section class="mt-10">
+                    <h2 class="text-2xl font-bold mb-5">Product Gallery</h2>
+                    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-5"></div>
+                </section>
             </section>
         </div>
     </main>
@@ -103,6 +108,11 @@
         </div>
     </footer>
 
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+        <span id="close-lightbox" class="absolute top-5 right-8 text-4xl text-white cursor-pointer">&times;</span>
+        <img id="lightbox-image" src="" alt="Expanded product view" class="max-w-[80%] max-h-[80vh] rounded-xl shadow-2xl">
+    </div>
+
     <script>
         const products = [
             {
@@ -111,7 +121,12 @@
                 category: 'Streetwear',
                 price: 899,
                 material: 'Organic Cotton',
-                image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 2,
@@ -119,7 +134,12 @@
                 category: 'Footwear',
                 price: 1499,
                 material: 'Recycled Rubber',
-                image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 3,
@@ -127,7 +147,11 @@
                 category: 'Accessories',
                 price: 349,
                 material: 'Hemp',
-                image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1534215754734-18e55d13e346?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 4,
@@ -135,7 +159,11 @@
                 category: 'Streetwear',
                 price: 450,
                 material: 'Organic Cotton',
-                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 5,
@@ -143,7 +171,11 @@
                 category: 'Footwear',
                 price: 1299,
                 material: 'Recycled Polyester',
-                image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 6,
@@ -151,7 +183,11 @@
                 category: 'Accessories',
                 price: 680,
                 material: 'Ocean Plastic Fiber',
-                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 7,
@@ -159,7 +195,11 @@
                 category: 'Streetwear',
                 price: 1599,
                 material: 'Recycled Polyester',
-                image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=80'
+                ]
             },
             {
                 id: 8,
@@ -167,11 +207,16 @@
                 category: 'Footwear',
                 price: 999,
                 material: 'Recycled Rubber',
-                image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=600&q=80'
+                image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=600&q=80',
+                gallery: [
+                    'https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=80'
+                ]
             }
         ];
 
         const productGrid = document.getElementById('product-grid');
+        const galleryGrid = document.getElementById('gallery-grid');
         const searchInput = document.getElementById('search-input');
         const sortSelect = document.getElementById('sort-select');
         const materialFilter = document.getElementById('material-filter');
@@ -179,6 +224,9 @@
         const priceValue = document.getElementById('price-value');
         const resultsCount = document.getElementById('results-count');
         const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
 
         function getSelectedCategories() {
             return [...categoryCheckboxes]
@@ -190,12 +238,27 @@
             return `R ${price.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         }
 
+        function renderGallery(items) {
+            galleryGrid.innerHTML = items.slice(0, 6).map(product => `
+                <img src="${product.image}" alt="${product.name}" class="product-gallery-image cursor-pointer rounded-xl shadow-sm object-cover h-56 w-full" data-image="${product.gallery[0]}" />
+            `).join('');
+
+            document.querySelectorAll('.product-gallery-image').forEach(image => {
+                image.addEventListener('click', () => {
+                    lightboxImage.src = image.dataset.image;
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                });
+            });
+        }
+
         function renderProducts(items) {
             productGrid.innerHTML = '';
 
             if (!items.length) {
                 productGrid.innerHTML = '<p class="text-center text-gray-500 col-span-full py-12">No products matched your search.</p>';
                 resultsCount.textContent = '0 results';
+                renderGallery([]);
                 return;
             }
 
@@ -203,7 +266,7 @@
                 <article class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between transition hover:shadow-md">
                     <div>
                         <div class="h-48 overflow-hidden bg-gray-100">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                            <img src="${product.image}" alt="${product.name}" class="product-card-image w-full h-full object-cover transition-transform duration-300 hover:scale-105 cursor-pointer" data-image="${product.gallery[0]}">
                         </div>
                         <div class="p-4">
                             <span class="text-[10px] font-bold text-emerald uppercase bg-emerald/10 px-2 py-0.5 rounded-full">${product.category}</span>
@@ -218,7 +281,16 @@
                 </article>
             `).join('');
 
+            document.querySelectorAll('.product-card-image').forEach(image => {
+                image.addEventListener('click', () => {
+                    lightboxImage.src = image.dataset.image;
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                });
+            });
+
             resultsCount.textContent = `${items.length} product${items.length === 1 ? '' : 's'} found`;
+            renderGallery(items);
         }
 
         function filterAndSortProducts() {
@@ -257,6 +329,18 @@
             filterAndSortProducts();
         });
         categoryCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterAndSortProducts));
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            }
+        });
 
         priceValue.textContent = `R${Number(priceRange.value).toLocaleString('en-ZA')}`;
         renderProducts(products);
