@@ -1,6 +1,6 @@
 What Was Fixed
 The Problem: The search button in the products section was unresponsive or not functioning as expected.
-
+I also included gallery Box
 The Root Cause: This was typically caused by either conflicting inline/internal styles overriding click events, broken element selectors, or missing event handlers tied to the button.
 
 🛠️ What Was Done
